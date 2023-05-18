@@ -1486,7 +1486,7 @@
           {
             "disabled": false,
             "nid": 1151091870,
-            "strtype": "SCREEN/EventHandler",
+            "strtype": "_event/EventHandler",
             "strval": "GESTURE_LEFT(GESTURE)",
             "childs": [
               {
@@ -1509,7 +1509,7 @@
               },
               {
                 "nid": 1404559876,
-                "strtype": "_custom/action",
+                "strtype": "_event/action",
                 "strval": "CHANGE SCREEN",
                 "childs": [
                   {
@@ -2154,7 +2154,7 @@
               {
                 "disabled": false,
                 "nid": 1141620022,
-                "strtype": "IMGBUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -2177,7 +2177,7 @@
                   },
                   {
                     "nid": -169684112,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CHANGE SCREEN",
                     "childs": [
                       {
@@ -2528,7 +2528,7 @@
               {
                 "disabled": false,
                 "nid": 1582747027,
-                "strtype": "IMGBUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -2551,7 +2551,7 @@
                   },
                   {
                     "nid": -1190492829,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CHANGE SCREEN",
                     "childs": [
                       {
@@ -2788,7 +2788,7 @@
           {
             "disabled": false,
             "nid": -582577710,
-            "strtype": "SCREEN/EventHandler",
+            "strtype": "_event/EventHandler",
             "strval": "GESTURE_LEFT(GESTURE)",
             "childs": [
               {
@@ -2811,7 +2811,7 @@
               },
               {
                 "nid": 754244851,
-                "strtype": "_custom/action",
+                "strtype": "_event/action",
                 "strval": "CHANGE SCREEN",
                 "childs": [
                   {
@@ -2864,7 +2864,7 @@
           {
             "disabled": false,
             "nid": -539928057,
-            "strtype": "SCREEN/EventHandler",
+            "strtype": "_event/EventHandler",
             "strval": "GESTURE_RIGHT(GESTURE)",
             "childs": [
               {
@@ -2887,7 +2887,7 @@
               },
               {
                 "nid": 1171430177,
-                "strtype": "_custom/action",
+                "strtype": "_event/action",
                 "strval": "CHANGE SCREEN",
                 "childs": [
                   {
@@ -3243,7 +3243,7 @@
               {
                 "disabled": false,
                 "nid": 60823371,
-                "strtype": "IMGBUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -3266,7 +3266,7 @@
                   },
                   {
                     "nid": -1918986020,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CHANGE SCREEN",
                     "childs": [
                       {
@@ -3617,7 +3617,7 @@
               {
                 "disabled": false,
                 "nid": 1645438414,
-                "strtype": "IMGBUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -3640,7 +3640,7 @@
                   },
                   {
                     "nid": -1144252195,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CHANGE SCREEN",
                     "childs": [
                       {
@@ -4172,7 +4172,7 @@
           {
             "disabled": false,
             "nid": -208023984,
-            "strtype": "SCREEN/EventHandler",
+            "strtype": "_event/EventHandler",
             "strval": "GESTURE_LEFT(GESTURE)",
             "childs": [
               {
@@ -4195,7 +4195,7 @@
               },
               {
                 "nid": 1630943507,
-                "strtype": "_custom/action",
+                "strtype": "_event/action",
                 "strval": "CHANGE SCREEN",
                 "childs": [
                   {
@@ -4248,7 +4248,7 @@
           {
             "disabled": false,
             "nid": -1397177873,
-            "strtype": "SCREEN/EventHandler",
+            "strtype": "_event/EventHandler",
             "strval": "GESTURE_RIGHT(GESTURE)",
             "childs": [
               {
@@ -4271,7 +4271,7 @@
               },
               {
                 "nid": -55075822,
-                "strtype": "_custom/action",
+                "strtype": "_event/action",
                 "strval": "CHANGE SCREEN",
                 "childs": [
                   {
@@ -4857,7 +4857,7 @@
               {
                 "disabled": false,
                 "nid": 1691184013,
-                "strtype": "BUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -4880,7 +4880,7 @@
                   },
                   {
                     "nid": 1294039046,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CHANGE SCREEN",
                     "childs": [
                       {
@@ -4933,7 +4933,7 @@
               {
                 "disabled": false,
                 "nid": 435745847,
-                "strtype": "BUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -4956,7 +4956,7 @@
                   },
                   {
                     "nid": 506225169,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CALL FUNCTION",
                     "childs": [
                       {
@@ -5819,7 +5819,7 @@
               {
                 "disabled": false,
                 "nid": 263691876,
-                "strtype": "BUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -5842,7 +5842,7 @@
                   },
                   {
                     "nid": -1113754297,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CHANGE SCREEN",
                     "childs": [
                       {
@@ -5895,7 +5895,7 @@
               {
                 "disabled": false,
                 "nid": -1400192516,
-                "strtype": "BUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -5918,7 +5918,7 @@
                   },
                   {
                     "nid": -1476037361,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CALL FUNCTION",
                     "childs": [
                       {
@@ -6502,7 +6502,7 @@
               {
                 "disabled": false,
                 "nid": -163243669,
-                "strtype": "BUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -6525,7 +6525,7 @@
                   },
                   {
                     "nid": 1629202276,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CHANGE SCREEN",
                     "childs": [
                       {
@@ -6578,7 +6578,7 @@
               {
                 "disabled": false,
                 "nid": 230010452,
-                "strtype": "BUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -6601,7 +6601,7 @@
                   },
                   {
                     "nid": 2120909785,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CALL FUNCTION",
                     "childs": [
                       {
@@ -7130,7 +7130,7 @@
               {
                 "disabled": false,
                 "nid": -611146685,
-                "strtype": "IMGBUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -7153,7 +7153,7 @@
                   },
                   {
                     "nid": -84979649,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CHANGE SCREEN",
                     "childs": [
                       {
@@ -7505,7 +7505,7 @@
               {
                 "disabled": false,
                 "nid": 1768733062,
-                "strtype": "IMGBUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -7528,7 +7528,7 @@
                   },
                   {
                     "nid": -1016392782,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CHANGE SCREEN",
                     "childs": [
                       {
@@ -7916,7 +7916,7 @@
                 "strtype": "OBJECT/Position",
                 "intarray": [
                   0,
-                  0
+                  -1
                 ],
                 "InheritedType": 7
               },
@@ -8750,8 +8750,8 @@
               {
                 "disabled": false,
                 "nid": 1352833842,
-                "strtype": "IMGBUTTON/EventHandler",
-                "strval": "LONG_PRESSED",
+                "strtype": "_event/EventHandler",
+                "strval": "LONG_PRESSED_REPEAT",
                 "childs": [
                   {
                     "nid": -376570321,
@@ -8773,7 +8773,7 @@
                   },
                   {
                     "nid": 581276417,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CALL FUNCTION",
                     "childs": [
                       {
@@ -8815,7 +8815,7 @@
               {
                 "disabled": false,
                 "nid": -2027401877,
-                "strtype": "IMGBUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -8838,7 +8838,7 @@
                   },
                   {
                     "nid": 840492722,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CALL FUNCTION",
                     "childs": [
                       {
@@ -9178,7 +9178,7 @@
               {
                 "disabled": false,
                 "nid": 1852555143,
-                "strtype": "IMGBUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -9202,7 +9202,7 @@
                   {
                     "nid": -1981633914,
                     "flags": 1048576,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "SET TEXT VALUE WHEN CHECKED",
                     "childs": [
                       {
@@ -9246,7 +9246,7 @@
                   },
                   {
                     "nid": 1586064279,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CALL FUNCTION",
                     "childs": [
                       {
@@ -9288,8 +9288,8 @@
               {
                 "disabled": false,
                 "nid": 2112314035,
-                "strtype": "IMGBUTTON/EventHandler",
-                "strval": "LONG_PRESSED",
+                "strtype": "_event/EventHandler",
+                "strval": "LONG_PRESSED_REPEAT",
                 "childs": [
                   {
                     "nid": 768186841,
@@ -9311,7 +9311,7 @@
                   },
                   {
                     "nid": 2114898782,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CALL FUNCTION",
                     "childs": [
                       {
@@ -9537,7 +9537,7 @@
           {
             "disabled": false,
             "nid": 764470476,
-            "strtype": "SCREEN/EventHandler",
+            "strtype": "_event/EventHandler",
             "strval": "GESTURE_LEFT(GESTURE)",
             "childs": [
               {
@@ -9560,7 +9560,7 @@
               },
               {
                 "nid": 1924964268,
-                "strtype": "_custom/action",
+                "strtype": "_event/action",
                 "strval": "CHANGE SCREEN",
                 "childs": [
                   {
@@ -9613,7 +9613,7 @@
           {
             "disabled": false,
             "nid": -1184293007,
-            "strtype": "SCREEN/EventHandler",
+            "strtype": "_event/EventHandler",
             "strval": "GESTURE_RIGHT(GESTURE)",
             "childs": [
               {
@@ -9636,7 +9636,7 @@
               },
               {
                 "nid": -256643623,
-                "strtype": "_custom/action",
+                "strtype": "_event/action",
                 "strval": "CHANGE SCREEN",
                 "childs": [
                   {
@@ -9992,7 +9992,7 @@
               {
                 "disabled": false,
                 "nid": -1481073455,
-                "strtype": "IMGBUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -10015,7 +10015,7 @@
                   },
                   {
                     "nid": -67309728,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CHANGE SCREEN",
                     "childs": [
                       {
@@ -10367,7 +10367,7 @@
               {
                 "disabled": false,
                 "nid": 864310160,
-                "strtype": "IMGBUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -10390,7 +10390,7 @@
                   },
                   {
                     "nid": -1547326918,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CHANGE SCREEN",
                     "childs": [
                       {
@@ -10992,7 +10992,7 @@
               {
                 "nid": -84359743,
                 "strtype": "LABEL/Text",
-                "strval": "0",
+                "strval": "1",
                 "InheritedType": 10
               },
               {
@@ -11614,7 +11614,7 @@
               {
                 "disabled": false,
                 "nid": -108620251,
-                "strtype": "IMGBUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -11637,7 +11637,7 @@
                   },
                   {
                     "nid": 1543960738,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CALL FUNCTION",
                     "childs": [
                       {
@@ -11679,8 +11679,8 @@
               {
                 "disabled": false,
                 "nid": 916370502,
-                "strtype": "IMGBUTTON/EventHandler",
-                "strval": "LONG_PRESSED",
+                "strtype": "_event/EventHandler",
+                "strval": "LONG_PRESSED_REPEAT",
                 "childs": [
                   {
                     "nid": -636337008,
@@ -11702,7 +11702,7 @@
                   },
                   {
                     "nid": 6014536,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CALL FUNCTION",
                     "childs": [
                       {
@@ -12042,7 +12042,7 @@
               {
                 "disabled": false,
                 "nid": 116280957,
-                "strtype": "IMGBUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -12065,7 +12065,7 @@
                   },
                   {
                     "nid": -254072903,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CALL FUNCTION",
                     "childs": [
                       {
@@ -12107,8 +12107,8 @@
               {
                 "disabled": false,
                 "nid": 808052872,
-                "strtype": "IMGBUTTON/EventHandler",
-                "strval": "LONG_PRESSED",
+                "strtype": "_event/EventHandler",
+                "strval": "LONG_PRESSED_REPEAT",
                 "childs": [
                   {
                     "nid": 17492085,
@@ -12130,7 +12130,7 @@
                   },
                   {
                     "nid": -643956529,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CALL FUNCTION",
                     "childs": [
                       {
@@ -12356,7 +12356,7 @@
           {
             "disabled": false,
             "nid": -1735362331,
-            "strtype": "SCREEN/EventHandler",
+            "strtype": "_event/EventHandler",
             "strval": "GESTURE_LEFT(GESTURE)",
             "childs": [
               {
@@ -12379,7 +12379,7 @@
               },
               {
                 "nid": -1660341118,
-                "strtype": "_custom/action",
+                "strtype": "_event/action",
                 "strval": "CHANGE SCREEN",
                 "childs": [
                   {
@@ -12432,7 +12432,7 @@
           {
             "disabled": false,
             "nid": 1250462265,
-            "strtype": "SCREEN/EventHandler",
+            "strtype": "_event/EventHandler",
             "strval": "GESTURE_RIGHT(GESTURE)",
             "childs": [
               {
@@ -12455,7 +12455,7 @@
               },
               {
                 "nid": 580364130,
-                "strtype": "_custom/action",
+                "strtype": "_event/action",
                 "strval": "CHANGE SCREEN",
                 "childs": [
                   {
@@ -13862,7 +13862,7 @@
               {
                 "disabled": false,
                 "nid": 1734667156,
-                "strtype": "BUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -13885,7 +13885,7 @@
                   },
                   {
                     "nid": 1320835343,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CALL FUNCTION",
                     "childs": [
                       {
@@ -13923,7 +13923,7 @@
                   },
                   {
                     "nid": 365608029,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "MODIFY STATE",
                     "childs": [
                       {
@@ -14264,7 +14264,7 @@
                   {
                     "disabled": false,
                     "nid": -1486688360,
-                    "strtype": "LABEL/EventHandler",
+                    "strtype": "_event/EventHandler",
                     "strval": "CLICKED",
                     "childs": [
                       {
@@ -14287,7 +14287,7 @@
                       },
                       {
                         "nid": 744179139,
-                        "strtype": "_custom/action",
+                        "strtype": "_event/action",
                         "strval": "CALL FUNCTION",
                         "childs": [
                           {
@@ -15105,7 +15105,7 @@
               {
                 "disabled": false,
                 "nid": -1972407563,
-                "strtype": "BUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -15128,7 +15128,7 @@
                   },
                   {
                     "nid": 187402536,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CHANGE SCREEN",
                     "childs": [
                       {
@@ -15708,7 +15708,7 @@
               {
                 "disabled": false,
                 "nid": -151908516,
-                "strtype": "BUTTON/EventHandler",
+                "strtype": "_event/EventHandler",
                 "strval": "CLICKED",
                 "childs": [
                   {
@@ -15731,7 +15731,7 @@
                   },
                   {
                     "nid": -252831326,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "CALL FUNCTION",
                     "childs": [
                       {
@@ -15769,7 +15769,7 @@
                   },
                   {
                     "nid": 521592550,
-                    "strtype": "_custom/action",
+                    "strtype": "_event/action",
                     "strval": "MODIFY STATE",
                     "childs": [
                       {
@@ -17746,7 +17746,7 @@
     "theme_color2": 0,
     "exportFolderPath": "/Users/juanmanuel/Desktop/Ferus /Ferus_Project/UI/ExportedFiles/Ferus_Project_UI/./libraries/ui/src",
     "projectExportFolderPath": "/Users/juanmanuel/Desktop/Ferus /Ferus_Project/UI/ExportedFiles/Ferus_Project_UI",
-    "backup_cnt": 155,
+    "backup_cnt": 161,
     "autosave_cnt": 0,
     "lvgl_version": "8.3.6",
     "callfuncsexport": null,

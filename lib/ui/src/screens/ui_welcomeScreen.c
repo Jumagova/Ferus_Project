@@ -48,5 +48,4 @@ lv_obj_set_align( ui_rightWelcomeButton, LV_ALIGN_CENTER );
 lv_obj_add_event_cb(ui_LogoWelcomeImage, ui_event_LogoWelcomeImage, LV_EVENT_ALL, NULL);
 lv_obj_add_event_cb(ui_rightWelcomeButton, ui_event_rightWelcomeButton, LV_EVENT_ALL, NULL);
 lv_obj_add_event_cb(ui_welcomeScreen, ui_event_welcomeScreen, LV_EVENT_ALL, NULL);
-
 }

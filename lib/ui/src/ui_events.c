@@ -4,73 +4,134 @@
 // Project name: Ferus_Project_UI
 
 #include "ui.h"
+#include "stdio.h"
 
-void foodType2(lv_event_t * e)
+int quantity = 0;
+int hours = 0;
+char quantity_text[3];
+char hours_text[2];
+
+void foodType2(lv_event_t *e)
+{
+}
+
+void foodType1(lv_event_t *e)
 {
 	// Your code here
 }
 
-void foodType1(lv_event_t * e)
+void foodType3(lv_event_t *e)
 {
 	// Your code here
 }
 
-void foodType3(lv_event_t * e)
+void removeSelectQuantityLongPressed(lv_event_t *e)
+{
+	// Your code here
+	quantity = quantity - 10;
+	if (quantity > 500)
+	{
+		quantity = 0;
+	}
+	sprintf(quantity_text, "%d", quantity);
+	lv_label_set_text(ui_selectQuantityBodyText, quantity_text);
+}
+
+void removeSelectQuantityClicked(lv_event_t *e)
+{
+	// Your code here
+	quantity--;
+	if (quantity < 0)
+	{
+		quantity = 500;
+	}
+	sprintf(quantity_text, "%d", quantity);
+	lv_label_set_text(ui_selectQuantityBodyText, quantity_text);
+}
+
+void addSelectQuantityClicked(lv_event_t *e)
+{
+	// Your code here
+	quantity++;
+	if (quantity > 500)
+	{
+		quantity = 0;
+	}
+	sprintf(quantity_text, "%d", quantity);
+	lv_label_set_text(ui_selectQuantityBodyText, quantity_text);
+}
+
+void addSelectQuantityLongPressed(lv_event_t *e)
+{
+	// Your code here
+	quantity = quantity + 10;
+	if (quantity > 500)
+	{
+		quantity = 0;
+	}
+	sprintf(quantity_text, "%d", quantity);
+	lv_label_set_text(ui_selectQuantityBodyText, quantity_text);
+}
+
+void removeSelectTimestampClicked(lv_event_t *e)
+{
+	// Your code here
+	hours--;
+	if (hours < 1)
+	{
+		hours = 10;
+	}
+	sprintf(hours_text, "%d", hours);
+	lv_label_set_text(ui_selectTimestampBodyText, hours_text);
+}
+
+void removeSelectTimestampLongPressed(lv_event_t *e)
+{
+	// Your code here
+	hours = hours - 2;
+	if (hours < 1)
+	{
+		hours = 10;
+	}
+	sprintf(hours_text, "%d", hours);
+	lv_label_set_text(ui_selectTimestampBodyText, hours_text);
+}
+
+void addSelectTimestampClicked(lv_event_t *e)
+{
+	// Your code here
+	hours++;
+	if (hours > 10)
+	{
+		hours = 1;
+	}
+	sprintf(hours_text, "%d", hours);
+	lv_label_set_text(ui_selectTimestampBodyText, hours_text);
+}
+
+void addSelectTimestampLongPressed(lv_event_t *e)
+{
+	// Your code here
+	hours = hours + 10;
+	if (hours > 10)
+	{
+		hours = 1;
+	}
+	sprintf(hours_text, "%d", hours);
+	lv_label_set_text(ui_selectTimestampBodyText, hours_text);
+}
+
+void initFunction(lv_event_t *e)
 {
 	// Your code here
 }
 
-void removeSelectQuantityLongPressed(lv_event_t * e)
+void forceDistributionFunction(lv_event_t *e)
 {
 	// Your code here
 }
 
-void removeSelectQuantityClicked(lv_event_t * e)
-{
-	// Your code here
-}
-
-void addSelectQuantityClicked(lv_event_t * e)
-{
-	// Your code here
-}
-
-void addSelectQuantityLongPressed(lv_event_t * e)
-{
-	// Your code here
-}
-
-void removeSelectTimestampClicked(lv_event_t * e)
-{
-	// Your code here
-}
-
-void removeSelectTimestampLongPressed(lv_event_t * e)
-{
-	// Your code here
-}
-
-void addSelectTimestampClicked(lv_event_t * e)
-{
-	// Your code here
-}
-
-void addSelectTimestampLongPressed(lv_event_t * e)
-{
-	// Your code here
-}
-
-void initFunction(lv_event_t * e)
-{
-	// Your code here
-}
-
-void forceDistributionFunction(lv_event_t * e)
-{
-	// Your code here
-}
-
-void stopFunction(lv_event_t * e)
+void stopFunction(lv_event_t *e)
 {
 	// Your code here
 }

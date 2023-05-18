@@ -32,7 +32,7 @@ ui_initBodyText = lv_label_create(ui_initScreen);
 lv_obj_set_width( ui_initBodyText, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_initBodyText, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_align( ui_initBodyText, LV_ALIGN_CENTER );
-lv_label_set_text(ui_initBodyText,"Este dispositivo fue disenado \npara cumplir los estandares\nde la alimentacion de los\nanimales en granjas \n\nDisenado por Taller Cartama\nMedellin, Colombia");
+lv_label_set_text(ui_initBodyText,"Este dispositivo fue diseñado \npara cumplir los estandares\nde la alimentacion de los\nanimales en granjas \n\nDiseñado por Taller Cartama\nMedellín, Colombia");
 lv_obj_set_style_text_align(ui_initBodyText, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_initBodyText, &lv_font_montserrat_20, LV_PART_MAIN| LV_STATE_DEFAULT);
 

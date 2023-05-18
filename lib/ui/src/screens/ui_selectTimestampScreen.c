@@ -42,7 +42,7 @@ ui_selectTimestampBodyText = lv_label_create(ui_selectTimestampScreen);
 lv_obj_set_width( ui_selectTimestampBodyText, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_selectTimestampBodyText, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_align( ui_selectTimestampBodyText, LV_ALIGN_CENTER );
-lv_label_set_text(ui_selectTimestampBodyText,"0");
+lv_label_set_text(ui_selectTimestampBodyText,"1");
 lv_obj_set_style_text_font(ui_selectTimestampBodyText, &lv_font_montserrat_28, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_selectTimestampBodyText2 = lv_label_create(ui_selectTimestampScreen);

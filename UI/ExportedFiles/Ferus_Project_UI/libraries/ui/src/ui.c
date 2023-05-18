@@ -240,7 +240,7 @@ if ( event_code == LV_EVENT_CLICKED) {
 }
 void ui_event_selectQuantityRemoveButton( lv_event_t * e) {
     lv_event_code_t event_code = lv_event_get_code(e);lv_obj_t * target = lv_event_get_target(e);
-if ( event_code == LV_EVENT_LONG_PRESSED) {
+if ( event_code == LV_EVENT_LONG_PRESSED_REPEAT) {
       removeSelectQuantityLongPressed( e );
 }
 if ( event_code == LV_EVENT_CLICKED) {
@@ -252,7 +252,7 @@ void ui_event_selectQuantityAddButton( lv_event_t * e) {
 if ( event_code == LV_EVENT_CLICKED) {
       addSelectQuantityClicked( e );
 }
-if ( event_code == LV_EVENT_LONG_PRESSED) {
+if ( event_code == LV_EVENT_LONG_PRESSED_REPEAT) {
       addSelectQuantityLongPressed( e );
 }
 }
@@ -284,7 +284,7 @@ void ui_event_selectTimestampRemoveButton( lv_event_t * e) {
 if ( event_code == LV_EVENT_CLICKED) {
       removeSelectTimestampClicked( e );
 }
-if ( event_code == LV_EVENT_LONG_PRESSED) {
+if ( event_code == LV_EVENT_LONG_PRESSED_REPEAT) {
       removeSelectTimestampLongPressed( e );
 }
 }
@@ -293,7 +293,7 @@ void ui_event_selectTimestampAddButton( lv_event_t * e) {
 if ( event_code == LV_EVENT_CLICKED) {
       addSelectTimestampClicked( e );
 }
-if ( event_code == LV_EVENT_LONG_PRESSED) {
+if ( event_code == LV_EVENT_LONG_PRESSED_REPEAT) {
       addSelectTimestampLongPressed( e );
 }
 }
