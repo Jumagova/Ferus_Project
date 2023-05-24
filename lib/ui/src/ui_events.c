@@ -29,9 +29,9 @@ void removeSelectQuantityLongPressed(lv_event_t *e)
 {
 	// Your code here
 	quantity = quantity - 10;
-	if (quantity > 500)
+	if (quantity < 0)
 	{
-		quantity = 0;
+		quantity = 500;
 	}
 	sprintf(quantity_text, "%d", quantity);
 	lv_label_set_text(ui_selectQuantityBodyText, quantity_text);
@@ -112,7 +112,7 @@ void addSelectTimestampClicked(lv_event_t *e)
 void addSelectTimestampLongPressed(lv_event_t *e)
 {
 	// Your code here
-	hours = hours + 10;
+	hours = hours + 2;
 	if (hours > 10)
 	{
 		hours = 1;

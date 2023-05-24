@@ -25,6 +25,12 @@ void initFunction(lv_event_t * e);
 void forceDistributionFunction(lv_event_t * e);
 void stopFunction(lv_event_t * e);
 
+extern void saveStringData(const char *key, const char *value);
+extern void getStringData(const char *key, char *buffer, size_t bufferSize);
+extern void saveUIntData(const char *key, uint32_t value);
+extern void getUIntData(const char *key, uint32_t value);
+extern void deleteData(const char* key);
+
 #ifdef __cplusplus
 } /*extern "C"*/
 #endif
