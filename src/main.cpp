@@ -5,6 +5,8 @@
 #include <Preferences.h>
 #include "storage_memory.h"
 #include "motor_functions.h"
+#include "timer_interrupt.h"
+
 
 /*Change to your screen resolution*/
 static const uint16_t screenWidth = 480;
@@ -16,11 +18,14 @@ static lv_color_t buf[screenWidth * screenHeight / 10];
 LGFX tft;
 
 /*Internal memory storage*/
-InternalMemoryStorage storage("configurationParameters");
 
-/*Motor*/
 
-MotorFunctions motor;
+
+// /*Motor*/
+
+
+// /*Timer Interrupt*/
+// TimerManager &timerManager = TimerManager::getInstance();
 
 /* Display flushing */
 
@@ -53,16 +58,12 @@ void my_touchpad_read(lv_indev_drv_t *indev_driver, lv_indev_data_t *data)
   }
 }
 
+void uiTask(void *parameter);
+void motorTask(void *parameter);
+
 void setup()
 {
   Serial.begin(115200); /* prepare for possible serial debug */
-
-  String LVGL_Arduino = "Hello Arduino! ";
-  LVGL_Arduino += String('V') + lv_version_major() + "." + lv_version_minor() + "." + lv_version_patch();
-
-  Serial.println(LVGL_Arduino);
-  Serial.println("I am LVGL_Arduino");
-
   lv_init();
 
 #if LV_USE_LOG != 0
@@ -71,7 +72,6 @@ void setup()
 
   tft.begin();        /* TFT init */
   tft.setRotation(3); /* Landscape orientation, flipped */
-  tft.setBrightness(255);
 
   lv_disp_draw_buf_init(&draw_buf, buf, NULL, screenWidth * screenHeight / 10);
 
@@ -91,15 +91,18 @@ void setup()
   indev_drv.type = LV_INDEV_TYPE_POINTER;
   indev_drv.read_cb = my_touchpad_read;
   lv_indev_drv_register(&indev_drv);
-
+  
+  MotorFunctions &motor = MotorFunctions::getInstance();
+  motor.initialize();
   ui_init();
-
+  
   Serial.println("Setup done");
 }
 
 void loop()
 {
-  lv_timer_handler(); /* let the GUI do its work */
+  tft.setBrightness(255);
+  lv_timer_handler();
+  MotorFunctions &motor = MotorFunctions::getInstance();
   motor.updateMotor();
-  delay(5);
 }

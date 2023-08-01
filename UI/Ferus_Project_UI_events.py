@@ -70,3 +70,11 @@ def foodType2(event_struct):
 def foodType3(event_struct):
     return
 
+
+def foodType4(event_struct):
+    return
+
+
+def foodType5(event_struct):
+    return
+

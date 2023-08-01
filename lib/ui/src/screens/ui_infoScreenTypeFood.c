@@ -9,150 +9,261 @@ void ui_infoScreenTypeFood_screen_init(void)
 {
 ui_infoScreenTypeFood = lv_obj_create(NULL);
 lv_obj_clear_flag( ui_infoScreenTypeFood, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+lv_obj_set_style_bg_color(ui_infoScreenTypeFood, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_bg_opa(ui_infoScreenTypeFood, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_bg_color(ui_infoScreenTypeFood, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_CHECKED );
+lv_obj_set_style_bg_opa(ui_infoScreenTypeFood, 255, LV_PART_MAIN| LV_STATE_CHECKED);
 
-ui_infoScreenTypeFoodHeader = lv_label_create(ui_infoScreenTypeFood);
-lv_obj_set_width( ui_infoScreenTypeFoodHeader, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_infoScreenTypeFoodHeader, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_infoScreenTypeFoodHeader, lv_pct(-25) );
-lv_obj_set_y( ui_infoScreenTypeFoodHeader, lv_pct(-15) );
-lv_obj_set_align( ui_infoScreenTypeFoodHeader, LV_ALIGN_CENTER );
-lv_label_set_text(ui_infoScreenTypeFoodHeader,"Tipo de alimento");
+ui_tableView = lv_img_create(ui_infoScreenTypeFood);
+lv_img_set_src(ui_tableView, &ui_img_table_png);
+lv_obj_set_width( ui_tableView, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_tableView, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_align( ui_tableView, LV_ALIGN_CENTER );
+lv_obj_add_flag( ui_tableView, LV_OBJ_FLAG_ADV_HITTEST );   /// Flags
+lv_obj_clear_flag( ui_tableView, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+lv_img_set_zoom(ui_tableView,320);
 
-ui_infoScreenQuantityHeader = lv_label_create(ui_infoScreenTypeFood);
-lv_obj_set_width( ui_infoScreenQuantityHeader, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_infoScreenQuantityHeader, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_infoScreenQuantityHeader, lv_pct(-25) );
-lv_obj_set_y( ui_infoScreenQuantityHeader, lv_pct(0) );
-lv_obj_set_align( ui_infoScreenQuantityHeader, LV_ALIGN_CENTER );
-lv_label_set_text(ui_infoScreenQuantityHeader,"Cantidad");
-
-ui_infoScreenTimeHeader = lv_label_create(ui_infoScreenTypeFood);
-lv_obj_set_width( ui_infoScreenTimeHeader, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_infoScreenTimeHeader, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_infoScreenTimeHeader, lv_pct(-25) );
-lv_obj_set_y( ui_infoScreenTimeHeader, lv_pct(15) );
-lv_obj_set_align( ui_infoScreenTimeHeader, LV_ALIGN_CENTER );
-lv_label_set_text(ui_infoScreenTimeHeader,"Tiempo");
+ui_infoScreenFuctionInfo = lv_label_create(ui_infoScreenTypeFood);
+lv_obj_set_width( ui_infoScreenFuctionInfo, lv_pct(90));
+lv_obj_set_height( ui_infoScreenFuctionInfo, lv_pct(10));
+lv_obj_set_x( ui_infoScreenFuctionInfo, lv_pct(0) );
+lv_obj_set_y( ui_infoScreenFuctionInfo, lv_pct(-40) );
+lv_obj_set_align( ui_infoScreenFuctionInfo, LV_ALIGN_CENTER );
+lv_label_set_text(ui_infoScreenFuctionInfo,"Alimentador en pausa");
+lv_obj_set_style_text_color(ui_infoScreenFuctionInfo, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_infoScreenFuctionInfo, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_align(ui_infoScreenFuctionInfo, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_decor(ui_infoScreenFuctionInfo, LV_TEXT_DECOR_NONE, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_infoScreenFuctionInfo, &ui_font_BoldFont, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_radius(ui_infoScreenFuctionInfo, 4, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_bg_color(ui_infoScreenFuctionInfo, lv_color_hex(0xF39200), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_bg_opa(ui_infoScreenFuctionInfo, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_pad_left(ui_infoScreenFuctionInfo, 0, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_pad_right(ui_infoScreenFuctionInfo, 0, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_pad_top(ui_infoScreenFuctionInfo, 4, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_pad_bottom(ui_infoScreenFuctionInfo, 0, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_bg_color(ui_infoScreenFuctionInfo, lv_color_hex(0x808122), LV_PART_MAIN | LV_STATE_CHECKED );
+lv_obj_set_style_bg_opa(ui_infoScreenFuctionInfo, 255, LV_PART_MAIN| LV_STATE_CHECKED);
 
 ui_infoScreenInitButton = lv_btn_create(ui_infoScreenTypeFood);
-lv_obj_set_width( ui_infoScreenInitButton, 100);
-lv_obj_set_height( ui_infoScreenInitButton, 50);
-lv_obj_set_x( ui_infoScreenInitButton, lv_pct(-35) );
-lv_obj_set_y( ui_infoScreenInitButton, lv_pct(35) );
+lv_obj_set_height( ui_infoScreenInitButton, 33);
+lv_obj_set_width( ui_infoScreenInitButton, lv_pct(15));
+lv_obj_set_x( ui_infoScreenInitButton, lv_pct(-39) );
+lv_obj_set_y( ui_infoScreenInitButton, lv_pct(33) );
 lv_obj_set_align( ui_infoScreenInitButton, LV_ALIGN_CENTER );
 lv_obj_add_flag( ui_infoScreenInitButton, LV_OBJ_FLAG_SCROLL_ON_FOCUS );   /// Flags
 lv_obj_clear_flag( ui_infoScreenInitButton, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+lv_obj_set_style_radius(ui_infoScreenInitButton, 4, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_bg_color(ui_infoScreenInitButton, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_bg_opa(ui_infoScreenInitButton, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_bg_color(ui_infoScreenInitButton, lv_color_hex(0x808122), LV_PART_MAIN | LV_STATE_PRESSED );
+lv_obj_set_style_bg_opa(ui_infoScreenInitButton, 255, LV_PART_MAIN| LV_STATE_PRESSED);
 
 ui_Label11 = lv_label_create(ui_infoScreenInitButton);
 lv_obj_set_width( ui_Label11, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_Label11, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_align( ui_Label11, LV_ALIGN_CENTER );
 lv_label_set_text(ui_Label11,"Iniciar");
+lv_obj_set_style_text_font(ui_Label11, &ui_font_RegularFont, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_Button3 = lv_btn_create(ui_infoScreenTypeFood);
-lv_obj_set_width( ui_Button3, 100);
-lv_obj_set_height( ui_Button3, 50);
-lv_obj_set_x( ui_Button3, lv_pct(35) );
-lv_obj_set_y( ui_Button3, lv_pct(35) );
-lv_obj_set_align( ui_Button3, LV_ALIGN_CENTER );
-lv_obj_add_flag( ui_Button3, LV_OBJ_FLAG_SCROLL_ON_FOCUS );   /// Flags
-lv_obj_clear_flag( ui_Button3, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+ui_infoScreenDispenseButton = lv_btn_create(ui_infoScreenTypeFood);
+lv_obj_set_height( ui_infoScreenDispenseButton, 33);
+lv_obj_set_width( ui_infoScreenDispenseButton, lv_pct(23));
+lv_obj_set_x( ui_infoScreenDispenseButton, lv_pct(14) );
+lv_obj_set_y( ui_infoScreenDispenseButton, lv_pct(33) );
+lv_obj_set_align( ui_infoScreenDispenseButton, LV_ALIGN_CENTER );
+lv_obj_add_flag( ui_infoScreenDispenseButton, LV_OBJ_FLAG_SCROLL_ON_FOCUS );   /// Flags
+lv_obj_clear_flag( ui_infoScreenDispenseButton, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+lv_obj_set_style_radius(ui_infoScreenDispenseButton, 4, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_bg_color(ui_infoScreenDispenseButton, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_bg_opa(ui_infoScreenDispenseButton, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_bg_color(ui_infoScreenDispenseButton, lv_color_hex(0x808122), LV_PART_MAIN | LV_STATE_PRESSED );
+lv_obj_set_style_bg_opa(ui_infoScreenDispenseButton, 255, LV_PART_MAIN| LV_STATE_PRESSED);
 
-ui_infoScreenForceButton = lv_label_create(ui_Button3);
-lv_obj_set_width( ui_infoScreenForceButton, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_infoScreenForceButton, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_align( ui_infoScreenForceButton, LV_ALIGN_CENTER );
-lv_label_set_text(ui_infoScreenForceButton,"Forzar\n Distribucion");
-lv_obj_set_style_text_align(ui_infoScreenForceButton, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_Label12 = lv_label_create(ui_infoScreenDispenseButton);
+lv_obj_set_width( ui_Label12, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_Label12, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_align( ui_Label12, LV_ALIGN_CENTER );
+lv_label_set_text(ui_Label12,"Dispensar");
+lv_obj_set_style_text_align(ui_Label12, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_Label12, &ui_font_RegularFont, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_infoScreenConfiguratioButton = lv_btn_create(ui_infoScreenTypeFood);
-lv_obj_set_width( ui_infoScreenConfiguratioButton, 110);
-lv_obj_set_height( ui_infoScreenConfiguratioButton, 50);
-lv_obj_set_x( ui_infoScreenConfiguratioButton, lv_pct(12) );
-lv_obj_set_y( ui_infoScreenConfiguratioButton, lv_pct(35) );
+lv_obj_set_height( ui_infoScreenConfiguratioButton, 33);
+lv_obj_set_width( ui_infoScreenConfiguratioButton, lv_pct(23));
+lv_obj_set_x( ui_infoScreenConfiguratioButton, lv_pct(-15) );
+lv_obj_set_y( ui_infoScreenConfiguratioButton, lv_pct(33) );
 lv_obj_set_align( ui_infoScreenConfiguratioButton, LV_ALIGN_CENTER );
 lv_obj_add_flag( ui_infoScreenConfiguratioButton, LV_OBJ_FLAG_SCROLL_ON_FOCUS );   /// Flags
 lv_obj_clear_flag( ui_infoScreenConfiguratioButton, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+lv_obj_set_style_radius(ui_infoScreenConfiguratioButton, 4, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_bg_color(ui_infoScreenConfiguratioButton, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_bg_opa(ui_infoScreenConfiguratioButton, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_bg_color(ui_infoScreenConfiguratioButton, lv_color_hex(0x808122), LV_PART_MAIN | LV_STATE_PRESSED );
+lv_obj_set_style_bg_opa(ui_infoScreenConfiguratioButton, 255, LV_PART_MAIN| LV_STATE_PRESSED);
 
 ui_Label13 = lv_label_create(ui_infoScreenConfiguratioButton);
 lv_obj_set_width( ui_Label13, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_Label13, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_align( ui_Label13, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Label13,"Configuracion");
+lv_label_set_text(ui_Label13,"Configurar");
+lv_obj_set_style_text_font(ui_Label13, &ui_font_RegularFont, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_infoScreenStopButton = lv_btn_create(ui_infoScreenTypeFood);
-lv_obj_set_width( ui_infoScreenStopButton, 100);
-lv_obj_set_height( ui_infoScreenStopButton, 50);
-lv_obj_set_x( ui_infoScreenStopButton, lv_pct(-12) );
-lv_obj_set_y( ui_infoScreenStopButton, lv_pct(35) );
+lv_obj_set_height( ui_infoScreenStopButton, 33);
+lv_obj_set_width( ui_infoScreenStopButton, lv_pct(15));
+lv_obj_set_x( ui_infoScreenStopButton, lv_pct(39) );
+lv_obj_set_y( ui_infoScreenStopButton, lv_pct(33) );
 lv_obj_set_align( ui_infoScreenStopButton, LV_ALIGN_CENTER );
 lv_obj_add_flag( ui_infoScreenStopButton, LV_OBJ_FLAG_SCROLL_ON_FOCUS );   /// Flags
 lv_obj_clear_flag( ui_infoScreenStopButton, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+lv_obj_set_style_radius(ui_infoScreenStopButton, 4, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_bg_color(ui_infoScreenStopButton, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_bg_opa(ui_infoScreenStopButton, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_bg_color(ui_infoScreenStopButton, lv_color_hex(0x808122), LV_PART_MAIN | LV_STATE_PRESSED );
+lv_obj_set_style_bg_opa(ui_infoScreenStopButton, 255, LV_PART_MAIN| LV_STATE_PRESSED);
 
 ui_Label14 = lv_label_create(ui_infoScreenStopButton);
 lv_obj_set_width( ui_Label14, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_Label14, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_align( ui_Label14, LV_ALIGN_CENTER );
 lv_label_set_text(ui_Label14,"Parar");
+lv_obj_set_style_text_font(ui_Label14, &ui_font_RegularFont, LV_PART_MAIN| LV_STATE_DEFAULT);
+
+ui_infoScreenSummaryInfo = lv_label_create(ui_infoScreenTypeFood);
+lv_obj_set_width( ui_infoScreenSummaryInfo, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_infoScreenSummaryInfo, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_infoScreenSummaryInfo, 0 );
+lv_obj_set_y( ui_infoScreenSummaryInfo, -59 );
+lv_obj_set_align( ui_infoScreenSummaryInfo, LV_ALIGN_CENTER );
+lv_label_set_text(ui_infoScreenSummaryInfo,"Resumen del programa");
+lv_obj_set_style_text_color(ui_infoScreenSummaryInfo, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_infoScreenSummaryInfo, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_infoScreenSummaryInfo, &ui_font_BoldFont, LV_PART_MAIN| LV_STATE_DEFAULT);
+
+ui_infoScreenTypeFoodHeader = lv_label_create(ui_infoScreenTypeFood);
+lv_obj_set_width( ui_infoScreenTypeFoodHeader, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_infoScreenTypeFoodHeader, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_infoScreenTypeFoodHeader, lv_pct(-19) );
+lv_obj_set_y( ui_infoScreenTypeFoodHeader, lv_pct(-8) );
+lv_obj_set_align( ui_infoScreenTypeFoodHeader, LV_ALIGN_CENTER );
+lv_label_set_text(ui_infoScreenTypeFoodHeader,"Tipo de alimento");
+lv_obj_set_style_text_color(ui_infoScreenTypeFoodHeader, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_infoScreenTypeFoodHeader, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_infoScreenTypeFoodHeader, &ui_font_RegularFont, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_infoScreenTypeFoodInfo = lv_label_create(ui_infoScreenTypeFood);
 lv_obj_set_width( ui_infoScreenTypeFoodInfo, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_infoScreenTypeFoodInfo, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_infoScreenTypeFoodInfo, lv_pct(5) );
-lv_obj_set_y( ui_infoScreenTypeFoodInfo, lv_pct(-15) );
+lv_obj_set_x( ui_infoScreenTypeFoodInfo, lv_pct(19) );
+lv_obj_set_y( ui_infoScreenTypeFoodInfo, lv_pct(-8) );
 lv_obj_set_align( ui_infoScreenTypeFoodInfo, LV_ALIGN_CENTER );
-lv_label_set_text(ui_infoScreenTypeFoodInfo,"Croquetas");
+lv_label_set_text(ui_infoScreenTypeFoodInfo,"Alimento sin configurar");
+lv_obj_set_style_text_color(ui_infoScreenTypeFoodInfo, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_infoScreenTypeFoodInfo, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_infoScreenTypeFoodInfo, &ui_font_RegularFont, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_infoScreenTimeInfo = lv_label_create(ui_infoScreenTypeFood);
-lv_obj_set_width( ui_infoScreenTimeInfo, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_infoScreenTimeInfo, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_infoScreenTimeInfo, lv_pct(5) );
-lv_obj_set_y( ui_infoScreenTimeInfo, lv_pct(15) );
-lv_obj_set_align( ui_infoScreenTimeInfo, LV_ALIGN_CENTER );
-lv_label_set_text(ui_infoScreenTimeInfo,"2");
+ui_infoScreenQuantityHeader = lv_label_create(ui_infoScreenTypeFood);
+lv_obj_set_width( ui_infoScreenQuantityHeader, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_infoScreenQuantityHeader, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_infoScreenQuantityHeader, lv_pct(-19) );
+lv_obj_set_y( ui_infoScreenQuantityHeader, lv_pct(2) );
+lv_obj_set_align( ui_infoScreenQuantityHeader, LV_ALIGN_CENTER );
+lv_label_set_text(ui_infoScreenQuantityHeader,"Cantidad");
+lv_obj_set_style_text_color(ui_infoScreenQuantityHeader, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_infoScreenQuantityHeader, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_infoScreenQuantityHeader, &ui_font_RegularFont, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_infoScreenQuantityInfo = lv_label_create(ui_infoScreenTypeFood);
 lv_obj_set_width( ui_infoScreenQuantityInfo, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_infoScreenQuantityInfo, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_infoScreenQuantityInfo, lv_pct(5) );
-lv_obj_set_y( ui_infoScreenQuantityInfo, lv_pct(0) );
+lv_obj_set_x( ui_infoScreenQuantityInfo, lv_pct(10) );
+lv_obj_set_y( ui_infoScreenQuantityInfo, lv_pct(2) );
 lv_obj_set_align( ui_infoScreenQuantityInfo, LV_ALIGN_CENTER );
-lv_label_set_text(ui_infoScreenQuantityInfo,"250");
+lv_label_set_text(ui_infoScreenQuantityInfo,"0");
+lv_obj_set_style_text_color(ui_infoScreenQuantityInfo, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_infoScreenQuantityInfo, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_infoScreenQuantityInfo, &ui_font_RegularFont, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_infoScreenQuantityLabel = lv_label_create(ui_infoScreenTypeFood);
-lv_obj_set_width( ui_infoScreenQuantityLabel, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_infoScreenQuantityLabel, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_infoScreenQuantityLabel, lv_pct(25) );
-lv_obj_set_y( ui_infoScreenQuantityLabel, lv_pct(0) );
-lv_obj_set_align( ui_infoScreenQuantityLabel, LV_ALIGN_CENTER );
-lv_label_set_text(ui_infoScreenQuantityLabel,"gramos");
+ui_infoScreenQuantityTag = lv_label_create(ui_infoScreenTypeFood);
+lv_obj_set_width( ui_infoScreenQuantityTag, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_infoScreenQuantityTag, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_infoScreenQuantityTag, lv_pct(25) );
+lv_obj_set_y( ui_infoScreenQuantityTag, lv_pct(2) );
+lv_obj_set_align( ui_infoScreenQuantityTag, LV_ALIGN_CENTER );
+lv_label_set_text(ui_infoScreenQuantityTag,"Gramos");
+lv_obj_set_style_text_color(ui_infoScreenQuantityTag, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_infoScreenQuantityTag, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_infoScreenQuantityTag, &ui_font_RegularFont, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_infoScreenTimeLabel = lv_label_create(ui_infoScreenTypeFood);
-lv_obj_set_width( ui_infoScreenTimeLabel, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_infoScreenTimeLabel, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_infoScreenTimeLabel, lv_pct(25) );
-lv_obj_set_y( ui_infoScreenTimeLabel, lv_pct(15) );
-lv_obj_set_align( ui_infoScreenTimeLabel, LV_ALIGN_CENTER );
-lv_label_set_text(ui_infoScreenTimeLabel,"horas");
+ui_infoScreenFrecuencyHeader = lv_label_create(ui_infoScreenTypeFood);
+lv_obj_set_width( ui_infoScreenFrecuencyHeader, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_infoScreenFrecuencyHeader, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_infoScreenFrecuencyHeader, lv_pct(-19) );
+lv_obj_set_y( ui_infoScreenFrecuencyHeader, lv_pct(12) );
+lv_obj_set_align( ui_infoScreenFrecuencyHeader, LV_ALIGN_CENTER );
+lv_label_set_text(ui_infoScreenFrecuencyHeader,"Frecuencia");
+lv_obj_set_style_text_color(ui_infoScreenFrecuencyHeader, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_infoScreenFrecuencyHeader, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_infoScreenFrecuencyHeader, &ui_font_RegularFont, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_infoScreenFuctionInfo = lv_label_create(ui_infoScreenTypeFood);
-lv_obj_set_width( ui_infoScreenFuctionInfo, lv_pct(60));
-lv_obj_set_height( ui_infoScreenFuctionInfo, lv_pct(8));
-lv_obj_set_x( ui_infoScreenFuctionInfo, lv_pct(0) );
-lv_obj_set_y( ui_infoScreenFuctionInfo, lv_pct(-35) );
-lv_obj_set_align( ui_infoScreenFuctionInfo, LV_ALIGN_CENTER );
-lv_label_set_text(ui_infoScreenFuctionInfo,"EN FUNCIONAMIENTO");
-lv_obj_set_style_text_align(ui_infoScreenFuctionInfo, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_decor(ui_infoScreenFuctionInfo, LV_TEXT_DECOR_NONE, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_infoScreenFuctionInfo, &lv_font_montserrat_20, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_radius(ui_infoScreenFuctionInfo, 10, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_bg_color(ui_infoScreenFuctionInfo, lv_color_hex(0xD04C29), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_bg_opa(ui_infoScreenFuctionInfo, 157, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_bg_color(ui_infoScreenFuctionInfo, lv_color_hex(0x32B12E), LV_PART_MAIN | LV_STATE_CHECKED );
-lv_obj_set_style_bg_opa(ui_infoScreenFuctionInfo, 255, LV_PART_MAIN| LV_STATE_CHECKED);
+ui_infoScreenFrecuencyInfo = lv_label_create(ui_infoScreenTypeFood);
+lv_obj_set_width( ui_infoScreenFrecuencyInfo, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_infoScreenFrecuencyInfo, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_infoScreenFrecuencyInfo, lv_pct(10) );
+lv_obj_set_y( ui_infoScreenFrecuencyInfo, lv_pct(12) );
+lv_obj_set_align( ui_infoScreenFrecuencyInfo, LV_ALIGN_CENTER );
+lv_label_set_text(ui_infoScreenFrecuencyInfo,"0");
+lv_obj_set_style_text_color(ui_infoScreenFrecuencyInfo, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_infoScreenFrecuencyInfo, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_infoScreenFrecuencyInfo, &ui_font_RegularFont, LV_PART_MAIN| LV_STATE_DEFAULT);
+
+ui_infoScreenFrecuencyHoursTag = lv_label_create(ui_infoScreenTypeFood);
+lv_obj_set_width( ui_infoScreenFrecuencyHoursTag, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_infoScreenFrecuencyHoursTag, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_infoScreenFrecuencyHoursTag, lv_pct(15) );
+lv_obj_set_y( ui_infoScreenFrecuencyHoursTag, lv_pct(12) );
+lv_obj_set_align( ui_infoScreenFrecuencyHoursTag, LV_ALIGN_CENTER );
+lv_label_set_text(ui_infoScreenFrecuencyHoursTag,"h:");
+lv_obj_set_style_text_color(ui_infoScreenFrecuencyHoursTag, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_infoScreenFrecuencyHoursTag, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_infoScreenFrecuencyHoursTag, &ui_font_RegularFont, LV_PART_MAIN| LV_STATE_DEFAULT);
+
+ui_infoScreenFrecuencyMinutesInfo = lv_label_create(ui_infoScreenTypeFood);
+lv_obj_set_width( ui_infoScreenFrecuencyMinutesInfo, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_infoScreenFrecuencyMinutesInfo, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_infoScreenFrecuencyMinutesInfo, lv_pct(20) );
+lv_obj_set_y( ui_infoScreenFrecuencyMinutesInfo, lv_pct(12) );
+lv_obj_set_align( ui_infoScreenFrecuencyMinutesInfo, LV_ALIGN_CENTER );
+lv_label_set_text(ui_infoScreenFrecuencyMinutesInfo,"00");
+lv_obj_set_style_text_color(ui_infoScreenFrecuencyMinutesInfo, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_infoScreenFrecuencyMinutesInfo, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_infoScreenFrecuencyMinutesInfo, &ui_font_RegularFont, LV_PART_MAIN| LV_STATE_DEFAULT);
+
+ui_infoScreenFrecuencyMinutesTag = lv_label_create(ui_infoScreenTypeFood);
+lv_obj_set_width( ui_infoScreenFrecuencyMinutesTag, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_infoScreenFrecuencyMinutesTag, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_infoScreenFrecuencyMinutesTag, lv_pct(27) );
+lv_obj_set_y( ui_infoScreenFrecuencyMinutesTag, lv_pct(12) );
+lv_obj_set_align( ui_infoScreenFrecuencyMinutesTag, LV_ALIGN_CENTER );
+lv_label_set_text(ui_infoScreenFrecuencyMinutesTag,"min");
+lv_obj_set_style_text_color(ui_infoScreenFrecuencyMinutesTag, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_infoScreenFrecuencyMinutesTag, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_infoScreenFrecuencyMinutesTag, &ui_font_RegularFont, LV_PART_MAIN| LV_STATE_DEFAULT);
+
+ui_infoScreenFooter = lv_label_create(ui_infoScreenTypeFood);
+lv_obj_set_width( ui_infoScreenFooter, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_infoScreenFooter, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_infoScreenFooter, lv_pct(0) );
+lv_obj_set_y( ui_infoScreenFooter, lv_pct(44) );
+lv_obj_set_align( ui_infoScreenFooter, LV_ALIGN_CENTER );
+lv_label_set_text(ui_infoScreenFooter,"FerusSmart - Elección inteligente para una nutrición saludable");
+lv_obj_set_style_text_color(ui_infoScreenFooter, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_infoScreenFooter, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_infoScreenFooter, &ui_font_RegularSmallFont, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 lv_obj_add_event_cb(ui_infoScreenInitButton, ui_event_infoScreenInitButton, LV_EVENT_ALL, NULL);
-lv_obj_add_event_cb(ui_infoScreenForceButton, ui_event_infoScreenForceButton, LV_EVENT_ALL, NULL);
+lv_obj_add_event_cb(ui_infoScreenDispenseButton, ui_event_infoScreenDispenseButton, LV_EVENT_ALL, NULL);
 lv_obj_add_event_cb(ui_infoScreenConfiguratioButton, ui_event_infoScreenConfiguratioButton, LV_EVENT_ALL, NULL);
 lv_obj_add_event_cb(ui_infoScreenStopButton, ui_event_infoScreenStopButton, LV_EVENT_ALL, NULL);
 

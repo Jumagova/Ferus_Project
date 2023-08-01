@@ -1,0 +1,16 @@
+{
+  "codename": "RegularSmallFont",
+  "ttf_path": "/assets/Montserrat-Regular.ttf",
+  "bin_path": "/assets/ui_font_RegularSmallFont.bin",
+  "c_path": "/assets/ui_font_RegularSmallFont.c",
+  "cfg_path": "/assets/ui_font_RegularSmallFont.fcfg",
+  "size": 10,
+  "bpp": 8,
+  "letters": 0,
+  "ranges": [
+    "0x20-0x7f"
+  ],
+  "symbols": "¿ñáéíóú",
+  "customparams": "--no-compress --no-prefilter",
+  "uploaded": false
+}

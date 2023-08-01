@@ -1,32 +1,39 @@
-#include <Arduino.h>
-
 #ifndef MOTOR_FUNCTIONS_H
 #define MOTOR_FUNCTIONS_H
+
+#include "Arduino.h"
 
 class MotorFunctions
 {
 public:
-    // Definition of GPIO atributes used for control Motor driver
-    const int DIR = 21;
-    const int PULL = 14;
-    const int ENA = 30;
-    const int MOTOR_OFF = 0;
-    const int MOTOR_ON = 1;
+    static MotorFunctions& getInstance();
 
-    // Definition of atributes used fot control motor
-    int motorState = MOTOR_OFF;
-    int motorDirection = 0;        // 0 for forward, 1 for reverse
-    const unsigned long motorPeriod = 5; // set period to 5ms
-    unsigned long motorLastTime = 0;
-    int motorDutyCycle = 0; // initial duty cycle value
+    int timeFoodConstants[4];
 
+    void initialize();
     void updateMotor();
+    void calculateTime();
     void turnOnMotor(int direction);
     void turnOffMotor();
+    bool isMotorOn() const;
 
+private:
+    MotorFunctions(); // Private constructor
 
-    private:
+    int motorState;
+    int motorDirection;
+    unsigned long motorPeriod;
+    unsigned long motorLastTime;
+    int motorDutyCycle;
+    int pwmChannel; 
+    int frequence; 
+    int resolution; 
+    int pwmPin;
 
+    // GPIO pin assignments
+    const int DIR_MOTOR_PIN = 21;
+    const int PULL_MOTOR_PIN = 14;
+    const int ENA_MOTOR_PIN = 30;
 };
 
-#endif
+#endif // MOTOR_FUNCTIONS_H
