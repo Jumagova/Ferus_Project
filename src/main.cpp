@@ -17,16 +17,6 @@ static lv_color_t buf[screenWidth * screenHeight / 10];
 
 LGFX tft;
 
-/*Internal memory storage*/
-
-
-
-// /*Motor*/
-
-
-// /*Timer Interrupt*/
-// TimerManager &timerManager = TimerManager::getInstance();
-
 /* Display flushing */
 
 void my_disp_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p)

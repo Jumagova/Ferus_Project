@@ -29,6 +29,7 @@ void ui_welcomeScreen_screen_init(void);
 void ui_event_welcomeScreen( lv_event_t * e);
 extern lv_obj_t *ui_welcomeScreen;
 extern lv_obj_t *ui_Logo;
+extern lv_obj_t *ui_LogoText;
 // SCREEN: ui_helloScreen
 void ui_helloScreen_screen_init(void);
 void ui_event_helloScreen( lv_event_t * e);

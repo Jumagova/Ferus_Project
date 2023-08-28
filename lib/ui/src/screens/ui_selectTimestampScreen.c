@@ -144,7 +144,7 @@ lv_obj_set_height( ui_selectTimestampFooter, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_selectTimestampFooter, lv_pct(0) );
 lv_obj_set_y( ui_selectTimestampFooter, lv_pct(44) );
 lv_obj_set_align( ui_selectTimestampFooter, LV_ALIGN_CENTER );
-lv_label_set_text(ui_selectTimestampFooter,"FerusSmart - Elección inteligente para una nutrición saludable");
+lv_label_set_text(ui_selectTimestampFooter,"Ferus Smart - Elección inteligente para una nutrición saludable");
 lv_obj_set_style_text_color(ui_selectTimestampFooter, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_text_opa(ui_selectTimestampFooter, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_selectTimestampFooter, &ui_font_RegularSmallFont, LV_PART_MAIN| LV_STATE_DEFAULT);

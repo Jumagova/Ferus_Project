@@ -149,7 +149,7 @@ lv_obj_set_height( ui_selectFoodFooter, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_selectFoodFooter, lv_pct(0) );
 lv_obj_set_y( ui_selectFoodFooter, lv_pct(44) );
 lv_obj_set_align( ui_selectFoodFooter, LV_ALIGN_CENTER );
-lv_label_set_text(ui_selectFoodFooter,"FerusSmart - Elección inteligente para una nutrición saludable");
+lv_label_set_text(ui_selectFoodFooter,"Ferus Smart - Elección inteligente para una nutrición saludable");
 lv_obj_set_style_text_color(ui_selectFoodFooter, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_text_opa(ui_selectFoodFooter, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_selectFoodFooter, &ui_font_RegularSmallFont, LV_PART_MAIN| LV_STATE_DEFAULT);

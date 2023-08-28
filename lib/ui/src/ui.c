@@ -13,6 +13,8 @@ void ui_welcomeScreen_screen_init(void);
 void ui_event_welcomeScreen( lv_event_t * e);
 lv_obj_t *ui_welcomeScreen;
 lv_obj_t *ui_Logo;
+lv_obj_t *ui_LogoText;
+
 
 // SCREEN: ui_helloScreen
 void ui_helloScreen_screen_init(void);
@@ -139,7 +141,7 @@ lv_obj_t *ui____initial_actions0;
 void ui_event_welcomeScreen( lv_event_t * e) {
     lv_event_code_t event_code = lv_event_get_code(e);lv_obj_t * target = lv_event_get_target(e);
 if ( event_code == LV_EVENT_SCREEN_LOADED) {
-      _ui_screen_change( ui_helloScreen, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 2000);
+      _ui_screen_change( ui_helloScreen, LV_SCR_LOAD_ANIM_MOVE_LEFT, 500, 5000);
 }
 }
 void ui_event_helloScreen( lv_event_t * e) {
