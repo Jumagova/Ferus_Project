@@ -7,7 +7,6 @@
 #include "motor_functions.h"
 #include "timer_interrupt.h"
 
-
 /*Change to your screen resolution*/
 static const uint16_t screenWidth = 480;
 static const uint16_t screenHeight = 320;
@@ -48,8 +47,39 @@ void my_touchpad_read(lv_indev_drv_t *indev_driver, lv_indev_data_t *data)
   }
 }
 
-void uiTask(void *parameter);
-void motorTask(void *parameter);
+void checkBool()
+{
+  TimerManager &timerManager = TimerManager::getInstance();
+  MotorFunctions &motor = MotorFunctions::getInstance();
+  InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+
+  bool isActivated = storage.getBoolData("isActivated");
+  uint32_t quantity;
+  storage.getUIntData("quantity", quantity);
+  uint32_t timestamp;
+  storage.getUIntData("timestamp", timestamp);
+  char food_selected[20];
+  storage.getStringData("food_selected", food_selected, sizeof(food_selected));
+  char quantity_text[10];
+  char timestamp[10];
+  if (isActivated && timestamp != 0 && quantity != 0)
+  {
+    _ui_screen_change(ui_infoScreenTypeFood, LV_SCR_LOAD_ANIM_NONE, 0, 0);
+    motor.calculateTime();
+    motor.turnOnMotor(1);
+
+    storage.saveBoolData("isActivated", true);
+    timerManager.attachInterrupt(timestamp);
+
+    lv_label_set_text(ui_infoScreenFuctionInfo, "Alimentador en funcionamiento");
+    sprintf(quantity_text, "%d", quantity);
+    sprintf(quantity_text, "%d", quantity);
+    lv_label_set_text(ui_infoScreenQuantityInfo, quantity_text);
+  }
+}
+
+// void uiTask(void *parameter);
+// void motorTask(void *parameter);
 
 void setup()
 {
@@ -81,12 +111,12 @@ void setup()
   indev_drv.type = LV_INDEV_TYPE_POINTER;
   indev_drv.read_cb = my_touchpad_read;
   lv_indev_drv_register(&indev_drv);
-  
+
   MotorFunctions &motor = MotorFunctions::getInstance();
   motor.initialize();
   ui_init();
-  
-  Serial.println("Setup done");
+
+  // Serial.println("Setup done");
 }
 
 void loop()

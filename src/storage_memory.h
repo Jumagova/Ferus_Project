@@ -12,6 +12,8 @@ public:
     void getStringData(const char* key, char* buffer, size_t bufferSize);
     void saveUIntData(const char* key, uint32_t value);
     void getUIntData(const char* key, uint32_t& value);
+    void saveBoolData(const char* key, bool value);
+    bool getBoolData(const char* key);
     void deleteData(const char* key);
 
 private:
