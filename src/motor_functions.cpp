@@ -43,6 +43,7 @@ void MotorFunctions::updateMotor()
         }
         else
         {
+            digitalWrite(ENA_MOTOR_PIN,0x01);
             ledcWrite(pwmChannel, motorDutyCycle); 
         }
     }
@@ -88,6 +89,7 @@ void MotorFunctions::turnOnMotor(int direction)
 void MotorFunctions::turnOffMotor()
 {
     ledcWrite(pwmChannel, 256); 
+    digitalWrite(ENA_MOTOR_PIN,0x00);
     motorState = false;
 }
 

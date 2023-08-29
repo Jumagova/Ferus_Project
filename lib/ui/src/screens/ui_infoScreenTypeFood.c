@@ -158,7 +158,7 @@ lv_obj_set_height( ui_infoScreenTypeFoodInfo, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_infoScreenTypeFoodInfo, lv_pct(19) );
 lv_obj_set_y( ui_infoScreenTypeFoodInfo, lv_pct(-8) );
 lv_obj_set_align( ui_infoScreenTypeFoodInfo, LV_ALIGN_CENTER );
-lv_label_set_text(ui_infoScreenTypeFoodInfo,"Alimento sin configurar");
+lv_label_set_text(ui_infoScreenTypeFoodInfo,"Sin Configuración");
 lv_obj_set_style_text_color(ui_infoScreenTypeFoodInfo, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_text_opa(ui_infoScreenTypeFoodInfo, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_infoScreenTypeFoodInfo, &ui_font_RegularFont, LV_PART_MAIN| LV_STATE_DEFAULT);

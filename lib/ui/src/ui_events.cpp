@@ -20,38 +20,38 @@ char minutes_text[3];
 const char *foodType[4] = {"Peletizado", "Croquetas", "Mixto", "Cubos de heno"};
 char food_selected[10];
 int total_time_in_secods = 0;
-
+bool activated = false;
 
 void foodType1(lv_event_t *e)
-{	
+{
 	strcpy(food_selected, foodType[0]);
-	lv_label_set_text(ui_infoScreenTypeFoodInfo,food_selected);
-	InternalMemoryStorage& storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveStringData("food_selected",food_selected);
+	lv_label_set_text(ui_infoScreenTypeFoodInfo, food_selected);
+	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+	storage.saveStringData("food_selected", food_selected);
 }
 
 void foodType2(lv_event_t *e)
 {
 	strcpy(food_selected, foodType[1]);
-	lv_label_set_text(ui_infoScreenTypeFoodInfo,food_selected);
-	InternalMemoryStorage& storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveStringData("food_selected",food_selected);
+	lv_label_set_text(ui_infoScreenTypeFoodInfo, food_selected);
+	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+	storage.saveStringData("food_selected", food_selected);
 }
 
 void foodType3(lv_event_t *e)
 {
 	strcpy(food_selected, foodType[2]);
-	lv_label_set_text(ui_infoScreenTypeFoodInfo,food_selected);
-	InternalMemoryStorage& storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveStringData("food_selected",food_selected);
+	lv_label_set_text(ui_infoScreenTypeFoodInfo, food_selected);
+	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+	storage.saveStringData("food_selected", food_selected);
 }
 
 void foodType4(lv_event_t *e)
 {
 	strcpy(food_selected, foodType[3]);
-	lv_label_set_text(ui_infoScreenTypeFoodInfo,food_selected);
-	InternalMemoryStorage& storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveStringData("food_selected",food_selected);
+	lv_label_set_text(ui_infoScreenTypeFoodInfo, food_selected);
+	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+	storage.saveStringData("food_selected", food_selected);
 }
 
 void removeSelectQuantityLongPressed(lv_event_t *e)
@@ -63,8 +63,8 @@ void removeSelectQuantityLongPressed(lv_event_t *e)
 	}
 	sprintf(quantity_text, "%d", quantity);
 	lv_label_set_text(ui_selectQuantityBodyText, quantity_text);
-	InternalMemoryStorage& storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveUIntData("quantity",quantity);
+	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+	storage.saveUIntData("quantity", quantity);
 }
 
 void removeSelectQuantityClicked(lv_event_t *e)
@@ -76,9 +76,9 @@ void removeSelectQuantityClicked(lv_event_t *e)
 	}
 	sprintf(quantity_text, "%d", quantity);
 	lv_label_set_text(ui_selectQuantityBodyText, quantity_text);
-	lv_label_set_text(ui_infoScreenQuantityInfo,quantity_text);
-	InternalMemoryStorage& storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveUIntData("quantity",quantity);
+	lv_label_set_text(ui_infoScreenQuantityInfo, quantity_text);
+	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+	storage.saveUIntData("quantity", quantity);
 }
 
 void addSelectQuantityClicked(lv_event_t *e)
@@ -90,9 +90,9 @@ void addSelectQuantityClicked(lv_event_t *e)
 	}
 	sprintf(quantity_text, "%d", quantity);
 	lv_label_set_text(ui_selectQuantityBodyText, quantity_text);
-	lv_label_set_text(ui_infoScreenQuantityInfo,quantity_text);
-	InternalMemoryStorage& storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveUIntData("quantity",quantity);
+	lv_label_set_text(ui_infoScreenQuantityInfo, quantity_text);
+	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+	storage.saveUIntData("quantity", quantity);
 }
 
 void addSelectQuantityLongPressed(lv_event_t *e)
@@ -104,9 +104,9 @@ void addSelectQuantityLongPressed(lv_event_t *e)
 	}
 	sprintf(quantity_text, "%d", quantity);
 	lv_label_set_text(ui_selectQuantityBodyText, quantity_text);
-	lv_label_set_text(ui_infoScreenQuantityInfo,quantity_text);
-	InternalMemoryStorage& storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveUIntData("quantity",quantity);
+	lv_label_set_text(ui_infoScreenQuantityInfo, quantity_text);
+	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+	storage.saveUIntData("quantity", quantity);
 }
 
 void removeSelectTimestampClicked(lv_event_t *e)
@@ -122,20 +122,20 @@ void removeSelectTimestampClicked(lv_event_t *e)
 		}
 		sprintf(hours_text, "%d", hours);
 		lv_label_set_text(ui_selectTimestampBodyText, hours_text);
-		lv_label_set_text(ui_infoScreenFrecuencyInfo,hours_text);
+		lv_label_set_text(ui_infoScreenFrecuencyInfo, hours_text);
 	}
 	sprintf(minutes_text, "%d", minutes);
 	lv_label_set_text(ui_selectTimestampBodyText1, minutes_text);
-	lv_label_set_text(ui_infoScreenQuantityInfo,quantity_text);
-	lv_label_set_text(ui_infoScreenFrecuencyMinutesInfo,minutes_text);
-	total_time_in_secods = hours*3600+minutes*60;
-	InternalMemoryStorage& storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveUIntData("timestamp",total_time_in_secods);
+	lv_label_set_text(ui_infoScreenQuantityInfo, quantity_text);
+	lv_label_set_text(ui_infoScreenFrecuencyMinutesInfo, minutes_text);
+	total_time_in_secods = hours * 3600 + minutes * 60;
+	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+	storage.saveUIntData("timestamp", total_time_in_secods);
 }
 
 void removeSelectTimestampLongPressed(lv_event_t *e)
 {
-	minutes=minutes-10;
+	minutes = minutes - 10;
 	if (minutes < 0)
 	{
 		minutes = 59;
@@ -146,14 +146,14 @@ void removeSelectTimestampLongPressed(lv_event_t *e)
 		}
 		sprintf(hours_text, "%d", hours);
 		lv_label_set_text(ui_selectTimestampBodyText, hours_text);
-		lv_label_set_text(ui_infoScreenFrecuencyInfo,hours_text);
+		lv_label_set_text(ui_infoScreenFrecuencyInfo, hours_text);
 	}
 	sprintf(minutes_text, "%d", minutes);
 	lv_label_set_text(ui_selectTimestampBodyText1, minutes_text);
-	lv_label_set_text(ui_infoScreenFrecuencyMinutesInfo,minutes_text);
-	total_time_in_secods = hours*3600+minutes*60;
-	InternalMemoryStorage& storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveUIntData("timestamp",total_time_in_secods);
+	lv_label_set_text(ui_infoScreenFrecuencyMinutesInfo, minutes_text);
+	total_time_in_secods = hours * 3600 + minutes * 60;
+	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+	storage.saveUIntData("timestamp", total_time_in_secods);
 }
 
 void addSelectTimestampClicked(lv_event_t *e)
@@ -169,20 +169,19 @@ void addSelectTimestampClicked(lv_event_t *e)
 		}
 		sprintf(hours_text, "%d", hours);
 		lv_label_set_text(ui_selectTimestampBodyText, hours_text);
-		lv_label_set_text(ui_infoScreenFrecuencyInfo,hours_text);
-
+		lv_label_set_text(ui_infoScreenFrecuencyInfo, hours_text);
 	}
 	sprintf(minutes_text, "%d", minutes);
 	lv_label_set_text(ui_selectTimestampBodyText1, minutes_text);
-	lv_label_set_text(ui_infoScreenFrecuencyMinutesInfo,minutes_text);
-	total_time_in_secods = hours*3600+minutes*60;
-	InternalMemoryStorage& storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveUIntData("timestamp",total_time_in_secods);
+	lv_label_set_text(ui_infoScreenFrecuencyMinutesInfo, minutes_text);
+	total_time_in_secods = hours * 3600 + minutes * 60;
+	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+	storage.saveUIntData("timestamp", total_time_in_secods);
 }
 
 void addSelectTimestampLongPressed(lv_event_t *e)
 {
-	minutes=minutes+10;
+	minutes = minutes + 10;
 	if (minutes > 59)
 	{
 		minutes = 0;
@@ -193,30 +192,34 @@ void addSelectTimestampLongPressed(lv_event_t *e)
 		}
 		sprintf(hours_text, "%d", hours);
 		lv_label_set_text(ui_selectTimestampBodyText, hours_text);
-		lv_label_set_text(ui_infoScreenFrecuencyInfo,hours_text);
+		lv_label_set_text(ui_infoScreenFrecuencyInfo, hours_text);
 	}
 	sprintf(minutes_text, "%d", minutes);
 	lv_label_set_text(ui_selectTimestampBodyText1, minutes_text);
-	lv_label_set_text(ui_infoScreenFrecuencyMinutesInfo,minutes_text);
-	total_time_in_secods = hours*3600+minutes*60;
-	InternalMemoryStorage& storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveUIntData("timestamp",total_time_in_secods);
+	lv_label_set_text(ui_infoScreenFrecuencyMinutesInfo, minutes_text);
+	total_time_in_secods = hours * 3600 + minutes * 60;
+	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+	storage.saveUIntData("timestamp", total_time_in_secods);
 }
 
 void initFunction(lv_event_t *e)
 {
-	TimerManager &timerManager = TimerManager::getInstance();	
-	MotorFunctions& motor = MotorFunctions::getInstance();
- 	motor.calculateTime();
+	TimerManager &timerManager = TimerManager::getInstance();
+	MotorFunctions &motor = MotorFunctions::getInstance();
+	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+
+	motor.calculateTime();
 	motor.turnOnMotor(1);
+
+	storage.saveBoolData("isActivated", true);
 	timerManager.attachInterrupt(total_time_in_secods);
-	lv_label_set_text(ui_infoScreenFuctionInfo,"Alimentador en funcionamiento");
+	lv_label_set_text(ui_infoScreenFuctionInfo, "Alimentador en funcionamiento");
 }
 
 void forceDistributionFunction(lv_event_t *e)
 {
-	MotorFunctions& motor = MotorFunctions::getInstance();
- 	motor.calculateTime();
+	MotorFunctions &motor = MotorFunctions::getInstance();
+	motor.calculateTime();
 	motor.turnOnMotor(1);
 }
 
@@ -224,8 +227,11 @@ void stopFunction(lv_event_t *e)
 {
 
 	TimerManager &timerManager = TimerManager::getInstance();
-	MotorFunctions& motor = MotorFunctions::getInstance();
+	MotorFunctions &motor = MotorFunctions::getInstance();
+	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+
 	timerManager.detachInterrupt();
+	storage.saveBoolData("isActivated", false);
 	motor.turnOffMotor();
-	lv_label_set_text(ui_infoScreenFuctionInfo,"Alimentador en pausa");
+	lv_label_set_text(ui_infoScreenFuctionInfo, "Alimentador en pausa");
 }
