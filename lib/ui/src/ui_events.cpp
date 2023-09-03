@@ -10,210 +10,110 @@
 #include "storage_memory.h"
 #include "motor_functions.h"
 #include "timer_interrupt.h"
+#include "feeder_settings.h"
 
-int quantity = 0;
-int hours = 0;
-int minutes = 0;
-char quantity_text[3];
-char hours_text[3];
-char minutes_text[3];
-const char *foodType[4] = {"Peletizado", "Croquetas", "Mixto", "Cubos de heno"};
-char food_selected[10];
-int total_time_in_secods = 0;
-bool activated = false;
 
 void foodType1(lv_event_t *e)
 {
-	strcpy(food_selected, foodType[0]);
-	lv_label_set_text(ui_infoScreenTypeFoodInfo, food_selected);
-	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveStringData("food_selected", food_selected);
+	FeederSettings &settings = FeederSettings::getInstance();
+	settings.selectFood(0);
+
+	
 }
 
 void foodType2(lv_event_t *e)
 {
-	strcpy(food_selected, foodType[1]);
-	lv_label_set_text(ui_infoScreenTypeFoodInfo, food_selected);
-	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveStringData("food_selected", food_selected);
+	FeederSettings &settings = FeederSettings::getInstance();
+	settings.selectFood(1);
+
 }
 
 void foodType3(lv_event_t *e)
 {
-	strcpy(food_selected, foodType[2]);
-	lv_label_set_text(ui_infoScreenTypeFoodInfo, food_selected);
-	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveStringData("food_selected", food_selected);
+	FeederSettings &settings = FeederSettings::getInstance();
+	settings.selectFood(2);
+
 }
 
 void foodType4(lv_event_t *e)
 {
-	strcpy(food_selected, foodType[3]);
-	lv_label_set_text(ui_infoScreenTypeFoodInfo, food_selected);
-	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveStringData("food_selected", food_selected);
+	FeederSettings &settings = FeederSettings::getInstance();
+	settings.selectFood(3);
+
 }
 
 void removeSelectQuantityLongPressed(lv_event_t *e)
 {
-	quantity = quantity - 10;
-	if (quantity < 0)
-	{
-		quantity = 500;
-	}
-	sprintf(quantity_text, "%d", quantity);
-	lv_label_set_text(ui_selectQuantityBodyText, quantity_text);
-	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveUIntData("quantity", quantity);
+	FeederSettings &settings = FeederSettings::getInstance();
+	settings.removeQuantity(10);
+
 }
 
 void removeSelectQuantityClicked(lv_event_t *e)
 {
-	quantity--;
-	if (quantity < 0)
-	{
-		quantity = 500;
-	}
-	sprintf(quantity_text, "%d", quantity);
-	lv_label_set_text(ui_selectQuantityBodyText, quantity_text);
-	lv_label_set_text(ui_infoScreenQuantityInfo, quantity_text);
-	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveUIntData("quantity", quantity);
+	FeederSettings &settings = FeederSettings::getInstance();
+	settings.removeQuantity(1);
 }
 
 void addSelectQuantityClicked(lv_event_t *e)
 {
-	quantity++;
-	if (quantity > 500)
-	{
-		quantity = 0;
-	}
-	sprintf(quantity_text, "%d", quantity);
-	lv_label_set_text(ui_selectQuantityBodyText, quantity_text);
-	lv_label_set_text(ui_infoScreenQuantityInfo, quantity_text);
-	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveUIntData("quantity", quantity);
+	FeederSettings &settings = FeederSettings::getInstance();
+	settings.addQuantity(1);
 }
 
 void addSelectQuantityLongPressed(lv_event_t *e)
 {
-	quantity = quantity + 10;
-	if (quantity > 500)
-	{
-		quantity = 0;
-	}
-	sprintf(quantity_text, "%d", quantity);
-	lv_label_set_text(ui_selectQuantityBodyText, quantity_text);
-	lv_label_set_text(ui_infoScreenQuantityInfo, quantity_text);
-	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveUIntData("quantity", quantity);
+	FeederSettings &settings = FeederSettings::getInstance();
+	settings.addQuantity(10);
 }
 
 void removeSelectTimestampClicked(lv_event_t *e)
 {
-	minutes--;
-	if (minutes < 0)
-	{
-		minutes = 59;
-		hours--;
-		if (hours < 0)
-		{
-			hours = 10;
-		}
-		sprintf(hours_text, "%d", hours);
-		lv_label_set_text(ui_selectTimestampBodyText, hours_text);
-		lv_label_set_text(ui_infoScreenFrecuencyInfo, hours_text);
-	}
-	sprintf(minutes_text, "%d", minutes);
-	lv_label_set_text(ui_selectTimestampBodyText1, minutes_text);
-	lv_label_set_text(ui_infoScreenQuantityInfo, quantity_text);
-	lv_label_set_text(ui_infoScreenFrecuencyMinutesInfo, minutes_text);
-	total_time_in_secods = hours * 3600 + minutes * 60;
-	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveUIntData("timestamp", total_time_in_secods);
+	FeederSettings &settings = FeederSettings::getInstance();
+	settings.removeTime(1);
+
 }
 
 void removeSelectTimestampLongPressed(lv_event_t *e)
 {
-	minutes = minutes - 10;
-	if (minutes < 0)
-	{
-		minutes = 59;
-		hours--;
-		if (hours < 0)
-		{
-			hours = 10;
-		}
-		sprintf(hours_text, "%d", hours);
-		lv_label_set_text(ui_selectTimestampBodyText, hours_text);
-		lv_label_set_text(ui_infoScreenFrecuencyInfo, hours_text);
-	}
-	sprintf(minutes_text, "%d", minutes);
-	lv_label_set_text(ui_selectTimestampBodyText1, minutes_text);
-	lv_label_set_text(ui_infoScreenFrecuencyMinutesInfo, minutes_text);
-	total_time_in_secods = hours * 3600 + minutes * 60;
-	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveUIntData("timestamp", total_time_in_secods);
+	FeederSettings &settings = FeederSettings::getInstance();
+	settings.removeTime(10);
+
 }
 
 void addSelectTimestampClicked(lv_event_t *e)
 {
-	minutes++;
-	if (minutes > 59)
-	{
-		minutes = 0;
-		hours++;
-		if (hours > 10)
-		{
-			hours = 0;
-		}
-		sprintf(hours_text, "%d", hours);
-		lv_label_set_text(ui_selectTimestampBodyText, hours_text);
-		lv_label_set_text(ui_infoScreenFrecuencyInfo, hours_text);
-	}
-	sprintf(minutes_text, "%d", minutes);
-	lv_label_set_text(ui_selectTimestampBodyText1, minutes_text);
-	lv_label_set_text(ui_infoScreenFrecuencyMinutesInfo, minutes_text);
-	total_time_in_secods = hours * 3600 + minutes * 60;
-	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveUIntData("timestamp", total_time_in_secods);
+	FeederSettings &settings = FeederSettings::getInstance();
+	settings.addTime(1);
+
 }
 
 void addSelectTimestampLongPressed(lv_event_t *e)
 {
-	minutes = minutes + 10;
-	if (minutes > 59)
-	{
-		minutes = 0;
-		hours++;
-		if (hours > 10)
-		{
-			hours = 0;
-		}
-		sprintf(hours_text, "%d", hours);
-		lv_label_set_text(ui_selectTimestampBodyText, hours_text);
-		lv_label_set_text(ui_infoScreenFrecuencyInfo, hours_text);
-	}
-	sprintf(minutes_text, "%d", minutes);
-	lv_label_set_text(ui_selectTimestampBodyText1, minutes_text);
-	lv_label_set_text(ui_infoScreenFrecuencyMinutesInfo, minutes_text);
-	total_time_in_secods = hours * 3600 + minutes * 60;
-	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
-	storage.saveUIntData("timestamp", total_time_in_secods);
+	FeederSettings &settings = FeederSettings::getInstance();
+	settings.addTime(10);
+
 }
 
 void initFunction(lv_event_t *e)
 {
-	TimerManager &timerManager = TimerManager::getInstance();
-	MotorFunctions &motor = MotorFunctions::getInstance();
-	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+	uint32_t total_time_in_seconds;
 
+	lv_label_set_text(ui_infoScreenFuctionInfo, "Alimentador en funcionamiento");
+
+	TimerManager &timerManager = TimerManager::getInstance();
+
+
+
+	InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
+	storage.saveBoolData("isActivated", true);
+	storage.getUIntData("timestamp",total_time_in_seconds);
+
+	timerManager.attachInterrupt(total_time_in_seconds);
+
+	MotorFunctions &motor = MotorFunctions::getInstance();
 	motor.calculateTime();
 	motor.turnOnMotor(1);
-
-	storage.saveBoolData("isActivated", true);
-	timerManager.attachInterrupt(total_time_in_secods);
-	lv_label_set_text(ui_infoScreenFuctionInfo, "Alimentador en funcionamiento");
 }
 
 void forceDistributionFunction(lv_event_t *e)

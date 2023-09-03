@@ -6,7 +6,7 @@
 class MotorFunctions
 {
 public:
-    static MotorFunctions& getInstance();
+    static MotorFunctions &getInstance();
 
     int timeFoodConstants[4];
 
@@ -25,9 +25,9 @@ private:
     unsigned long motorPeriod;
     unsigned long motorLastTime;
     int motorDutyCycle;
-    int pwmChannel; 
-    int frequence; 
-    int resolution; 
+    int pwmChannel;
+    int frequence;
+    int resolution;
     int pwmPin;
 
     // GPIO pin assignments

@@ -6,6 +6,7 @@
 #include "storage_memory.h"
 #include "motor_functions.h"
 #include "timer_interrupt.h"
+#include "feeder_settings.h"
 
 /*Change to your screen resolution*/
 static const uint16_t screenWidth = 480;
@@ -47,39 +48,15 @@ void my_touchpad_read(lv_indev_drv_t *indev_driver, lv_indev_data_t *data)
   }
 }
 
-void checkBool()
+void checkFunctionInitialized()
 {
-  TimerManager &timerManager = TimerManager::getInstance();
-  MotorFunctions &motor = MotorFunctions::getInstance();
-  InternalMemoryStorage &storage = InternalMemoryStorage::getInstance("storage_data");
 
-  bool isActivated = storage.getBoolData("isActivated");
-  uint32_t quantity;
-  storage.getUIntData("quantity", quantity);
-  uint32_t timestamp;
-  storage.getUIntData("timestamp", timestamp);
-  char food_selected[20];
-  storage.getStringData("food_selected", food_selected, sizeof(food_selected));
-  char quantity_text[10];
-  char timestamp[10];
-  if (isActivated && timestamp != 0 && quantity != 0)
-  {
-    _ui_screen_change(ui_infoScreenTypeFood, LV_SCR_LOAD_ANIM_NONE, 0, 0);
-    motor.calculateTime();
-    motor.turnOnMotor(1);
+    FeederSettings &settings = FeederSettings::getInstance();
 
-    storage.saveBoolData("isActivated", true);
-    timerManager.attachInterrupt(timestamp);
-
-    lv_label_set_text(ui_infoScreenFuctionInfo, "Alimentador en funcionamiento");
-    sprintf(quantity_text, "%d", quantity);
-    sprintf(quantity_text, "%d", quantity);
-    lv_label_set_text(ui_infoScreenQuantityInfo, quantity_text);
-  }
+    settings.loadSettingsFromStorage();
+    settings.updateUI();
+    settings.startMotorAndTimer();
 }
-
-// void uiTask(void *parameter);
-// void motorTask(void *parameter);
 
 void setup()
 {
@@ -114,8 +91,10 @@ void setup()
 
   MotorFunctions &motor = MotorFunctions::getInstance();
   motor.initialize();
+  
   ui_init();
 
+  checkFunctionInitialized();
   // Serial.println("Setup done");
 }
 

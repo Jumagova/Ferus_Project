@@ -48,7 +48,7 @@ lv_obj_set_height( ui_selectQuantityBodyText, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_selectQuantityBodyText, lv_pct(-12) );
 lv_obj_set_y( ui_selectQuantityBodyText, lv_pct(-13) );
 lv_obj_set_align( ui_selectQuantityBodyText, LV_ALIGN_CENTER );
-lv_label_set_text(ui_selectQuantityBodyText,"000");
+lv_label_set_text(ui_selectQuantityBodyText,"1");
 lv_obj_set_style_text_color(ui_selectQuantityBodyText, lv_color_hex(0x514949), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_text_opa(ui_selectQuantityBodyText, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_selectQuantityBodyText, &lv_font_montserrat_44, LV_PART_MAIN| LV_STATE_DEFAULT);
