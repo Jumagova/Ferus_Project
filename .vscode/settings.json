@@ -1,4 +1,7 @@
 {
     "stm32-for-vscode.armToolchainPath": false,
-    "cmake.sourceDirectory": "/Users/juanmanuel/Desktop/Ferus /Ferus_Project/lib/lvgl"
+    "cmake.sourceDirectory": "/Users/juanmanuel/Desktop/Ferus /Ferus_Project/lib/lvgl",
+    "files.associations": {
+        "chrono": "cpp"
+    }
 }

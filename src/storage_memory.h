@@ -3,8 +3,7 @@
 
 #include <Preferences.h>
 
-class InternalMemoryStorage
-{
+class InternalMemoryStorage {
 public:
     static InternalMemoryStorage& getInstance(const char* namespaceName);
 
