@@ -43,4 +43,6 @@ Temporary Items
 
 .vscode
 
+.DS_Store
+
 # End of https://www.toptal.com/developers/gitignore/api/platformio,macos
